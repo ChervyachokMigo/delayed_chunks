@@ -1,8 +1,7 @@
-const { split_arr, get_next_chunk } = require("./tools");
 
 module.exports = {
-    split_arr,
-    get_next_chunk,
+    split_arr: require("./tools").split_arr,
+    get_next_chunk: require("./tools").get_next_chunk,
 
     delayed_chunk: async (arr, chunk_size, ms, callback, debug = false) => {
         const chunks_info = split_arr( arr, chunk_size );
