@@ -33,7 +33,7 @@ module.exports = {
 
         return new Promise( (res) => {
             setTimeout( ()=> {
-                res({ chunk: chunks_list[arr_id].chunks[ chunks_list[arr_id].inc ] });
+                res( chunks_list[arr_id].chunks[ chunks_list[arr_id].inc ] );
                 chunks_list[arr_id].inc = chunks_list[arr_id].inc + 1;
             }, ms);
         });
