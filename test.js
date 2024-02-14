@@ -9,9 +9,11 @@ const delayed_chunks = require('./index.js');
     }
 
     //get delayed chanks
-    delayed_chunks(arr, 7, 1000, ( chunk ) => {
+    delayed_chunks(arr, 7, 1000, ({ chunk, inc, length }) => {
 
-        //do something with 'chunk'
+        //do something with 'chunk', it is current chunk of data, sliced from array
+        //do something with inc, it is current iterator
+        //do something with length, it is count of chunks
 
     }, true);
 
