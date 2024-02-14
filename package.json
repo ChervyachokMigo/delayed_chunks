@@ -1,0 +1,16 @@
+{
+  "name": "delayed_chunks",
+  "version": "1.0.0",
+  "description": "Get chunks of splitted array with time delay",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm install",
+    "test": "node test.js"
+  },
+  "keywords": ["delayed", "chunks"],
+  "author": "SadGod",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.chunk": "^4.2.0"
+  }
+}
