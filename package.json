@@ -4,7 +4,6 @@
   "description": "Get chunks of splitted array with time delay",
   "main": "index.js",
   "scripts": {
-    "install": "npm install",
     "test": "node test.js"
   },
   "keywords": ["delayed", "chunks"],
