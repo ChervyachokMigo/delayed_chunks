@@ -26,7 +26,7 @@ module.exports = {
     set_inc: (arr_id, new_inc) => chunks_list[arr_id].inc = new_inc,
 
     get_next_chunk: async (arr_id, ms) => {
-        if (chunks_list.findIndex( v => v.id === arr_id) === -1)
+        if (chunks_list.findIndex( v => v.arr_id === arr_id) === -1)
             return null;
 
         if (chunks_list[arr_id].inc > chunks_list[arr_id].chunks.length - 1)
