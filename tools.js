@@ -12,7 +12,7 @@ module.exports = {
         const arr_id = generate_id();
         const chunks = chunk(arr, chunk_size);
         const new_chunks = { 
-            id: arr_id,
+            arr_id,
             chunks,
             length: chunks.length,
             inc: 0
@@ -35,7 +35,7 @@ module.exports = {
         return new Promise( (res) => {
             setTimeout( ()=> {
                 res({
-                    arr_id: arr_id,
+                    arr_id,
                     chunk: chunks_list[arr_id].chunks[ chunks_list[arr_id].inc ],
                     length: chunks_list[arr_id].chunks.length,
                     inc: chunks_list[arr_id].inc,
