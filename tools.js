@@ -10,18 +10,18 @@ const generate_id = () => {
 module.exports = {
     split_arr: (arr, chunk_size) => {
         const arr_id = generate_id();
-        const chunks = chunk(arr, chunk_size);
+        const data = chunk(arr, chunk_size);
         const new_chunks = { 
             arr_id,
-            chunks,
-            length: chunks.length,
+            data,
+            length: data.length,
             inc: 0
         };
         chunks_list.push(new_chunks);
         return new_chunks;
     },
 
-    get_chunks: (arr_id) => chunks_list[arr_id].chunks,
+    get_chunks: (arr_id) => chunks_list[arr_id].data,
 
     set_inc: (arr_id, new_inc) => chunks_list[arr_id].inc = new_inc,
 
@@ -29,15 +29,15 @@ module.exports = {
         if (chunks_list.findIndex( v => v.arr_id === arr_id) === -1)
             return null;
 
-        if (chunks_list[arr_id].inc > chunks_list[arr_id].chunks.length - 1)
+        if (chunks_list[arr_id].inc > chunks_list[arr_id].data.length - 1)
             return null;
 
         return new Promise( (res) => {
             setTimeout( ()=> {
                 res({
                     arr_id,
-                    chunk: chunks_list[arr_id].chunks[ chunks_list[arr_id].inc ],
-                    length: chunks_list[arr_id].chunks.length,
+                    data: chunks_list[arr_id].data[ chunks_list[arr_id].inc ],
+                    length: chunks_list[arr_id].data.length,
                     inc: chunks_list[arr_id].inc,
                 });
                 chunks_list[arr_id].inc = chunks_list[arr_id].inc + 1;
